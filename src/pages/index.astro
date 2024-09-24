@@ -1,15 +1,39 @@
 ---
+import ClubInfo from '@/components/ClubInfo.astro';
 import Layout from '../layouts/Layout.astro';
 import HeroSection from '@/components/HeroSection.astro';
+import clubImg from '@images/club.webp';
 ---
 
 <Layout title="Accueil">
-  <main>
-    <HeroSection
-      title=`Cercle hippique de <span class="text-teal-800 dark:text-yellow-400">Gouvieux</span>`
-      subTitle="Centre équestre familial orienté vers le loisir, offrant cours pour tous les niveaux et pensions"
-      primaryBtn="Décourvir le club"
-      primaryBtnURL={`/club`}
-    />
-  </main>
+  <HeroSection
+    title=`Cercle hippique de <span class="text-teal-800 dark:text-yellow-400">Gouvieux</span>`
+    subTitle="Centre équestre familial orienté vers le loisir, offrant cours pour tous les niveaux et pensions"
+    primaryBtn="Décourvir le club"
+    primaryBtnURL={`/club`}
+  />
+
+  <ClubInfo
+    title=`Le Cercle Hippique de Gouvieux est ouvert et dirigé par <span class="text-teal-700 dark:text-teal-500">Stéphanie Dorothée</span> depuis le 01 avril 1997.`
+    description="L’activité du centre équestre se déplace du Club aux Terres Noires au rythme des saisons."
+    infos={[
+      {
+        heading: 'Les écuries',
+        content: "Site d'hiver qui dispose de boxes, d'un manège couvert et d'un club house.",
+        svg: 'house',
+      },
+      {
+        heading: 'Les Terres Noires',
+        content: "Site d'été avec pâtures, carrières de travail et accès direct en forêt.",
+        svg: 'tree',
+      },
+      {
+        heading: 'Localisation',
+        content:
+          "Situé dans un cadre verdoyant, notre centre équestre offre un environnement idéal pour la pratique de l'équitation.",
+        svg: 'mapPin',
+      },
+    ]}
+    clubImg={clubImg}
+  />
 </Layout>
