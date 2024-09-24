@@ -1,0 +1,45 @@
+---
+import FooterSocialLink from '@components/ui/FooterSocialLink.astro';
+import Icon from '@components/ui/icons/Icon.astro';
+import { SITE } from '@utils/variables';
+
+const socialLinks = {
+  facebook: 'https://www.facebook.com/cerclehippiquedegouvieux/',
+};
+---
+
+<footer class="w-full bg-neutral-300 dark:bg-neutral-900">
+  <div class="mx-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-16 lg:pt-20 2xl:max-w-screen-2xl">
+    <div class="flex flex-col items-center sm:flex-row sm:justify-between sm:items-end">
+      <div class="mb-4 sm:mb-0 text-center sm:text-left">
+        <span class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">CHG</span>
+        <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+          © <span id="current-year"></span>
+          {SITE.title}
+        </p>
+      </div>
+
+      <div class="mb-4 sm:mb-0">
+        <p class="text-sm text-neutral-600 dark:text-neutral-400">
+          Réalisé par
+          <a
+            class="rounded-lg font-medium underline underline-offset-2 outline-none ring-zinc-500 transition duration-300 hover:text-neutral-700 hover:decoration-dashed focus:outline-none focus-visible:ring dark:ring-zinc-200 dark:hover:text-neutral-300 ml-1"
+            href="mailto:v.berceaux@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer">Valentin Berceaux</a
+          >
+        </p>
+      </div>
+
+      <div>
+        <FooterSocialLink url={socialLinks.facebook}><Icon name="facebookFooter" /> </FooterSocialLink>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const year = new Date().getFullYear();
+  const element = document.getElementById('current-year');
+  element!.innerText = year.toString();
+</script>
