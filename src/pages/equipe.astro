@@ -1,0 +1,77 @@
+---
+import Card from '@/components/Card.astro';
+import Layout from '@/layouts/Layout.astro';
+
+import teamImage1 from '@images/team/1.jpg';
+import teamImage2 from '@images/team/2.jpg';
+import teamImage3 from '@images/team/3.jpg';
+import teamImage4 from '@images/team/4.jpg';
+import teamImage5 from '@images/team/5.jpg';
+import teamImage6 from '@images/team/6.jpg';
+import teamImage7 from '@images/team/7.jpg';
+import teamImage8 from '@images/team/8.jpg';
+import teamImage9 from '@images/team/9.jpg';
+
+const team = [
+  {
+    name: 'Stephanie Dorothée',
+    job: 'Gérante et enseignante diplomée du BEES1°',
+    img: teamImage1,
+  },
+  {
+    name: 'Elisabeth Peru',
+    job: 'Gérante et enseignante diplomée du BEES1°',
+    img: teamImage2,
+  },
+  {
+    name: 'Agathe Dudouit',
+    job: 'Enseignante diplômée du BPJEPS',
+    img: teamImage3,
+  },
+  {
+    name: 'Andrea Mignot',
+    job: 'Enseignante diplomée de l’AE',
+    img: teamImage4,
+  },
+  {
+    name: 'Claude Dorothée',
+    job: 'Diplomé du BAPAAT option Loisir et pleine nature',
+    img: teamImage5,
+  },
+  {
+    name: 'Océane Pradet',
+    job: 'Palefrenière',
+    img: teamImage6,
+  },
+  {
+    name: 'Gabrielle Ben Salha',
+    job: 'Apprentie BPJEPS',
+    img: teamImage7,
+  },
+  {
+    name: 'Charlotte Freund',
+    job: 'Apprentie AE',
+    img: teamImage8,
+  },
+  {
+    name: 'Shannon Blond',
+    job: 'Apprentie palefrenier soigneur',
+    img: teamImage9,
+  },
+];
+---
+
+<Layout title="Equipe">
+  <div class="flex flex-col gap-3 mx-auto mt-16">
+    <h1 class="font-bold text-3xl text-neutral-800 dark:text-neutral-200">
+      Découvrez l'équipe du <span class="text-teal-800 dark:text-teal-500">Cercle Hippique de Gouvieux</span>
+    </h1>
+    <p class="text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">
+      Nous sommes une petite équipe passionnée, formée de personnes de tous horizons et de différentes expériences et
+      compétences.
+    </p>
+  </div>
+  <div class="grid md:grid-cols-3 gap-10 mx-auto mt-12">
+    {team.map((member) => <Card {...member} />)}
+  </div>
+</Layout>

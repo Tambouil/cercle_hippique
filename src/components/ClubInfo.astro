@@ -28,19 +28,21 @@ const { title, description, infos, clubImg } = Astro.props;
         <h3 class="text-lg font-semibold text-neutral-600 dark:text-neutral-200 mt-5">
           {description}
         </h3>
-        <nav class="mt-5 grid gap-4 md:mt-10" aria-label="Features">
+        <div class="mt-5 grid gap-4 md:mt-10" aria-label="Features">
           {
             infos.map((info) => (
-              <span class="flex p-4 md:p-5">
+              <div class="flex p-4 md:p-5">
                 <Icon class="fill-current text-neutral-600 dark:text-neutral-200" name={info.svg} />
-                <span class="ms-6 grow">
-                  <span class="block text-lg font-bold text-teal-700 dark:text-teal-500">{info.heading}</span>
-                  <span class="mt-1 block text-neutral-600 dark:text-neutral-200">{info.content}</span>
-                </span>
-              </span>
+                <div class="ms-6 grow">
+                  <p class="block text-lg font-bold text-teal-700 dark:text-teal-500">{info.heading}</p>
+                  <p class="mt-1 block text-neutral-600 dark:text-neutral-200">
+                    <Fragment set:html={info.content} />
+                  </p>
+                </div>
+              </div>
             ))
           }
-        </nav>
+        </div>
       </div>
 
       <div class="lg:col-span-6 lg:col-start-1 lg:row-start-1">
