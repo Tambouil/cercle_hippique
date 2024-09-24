@@ -1,0 +1,53 @@
+---
+import Icon from '@components/ui/icons/Icon.astro';
+import Layout from '@/layouts/Layout.astro';
+import ContactIconBlock from '@/components/ContactIconBlock.astro';
+
+const title: string = 'Contactez-nous';
+const subTitle: string =
+  'Vous avez des questions à propos du cercle hippique de Gouvieux ? Contactez-nous et nous vous répondrons au plus vite.';
+---
+
+<Layout title="Contact">
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div class="mx-auto max-w-2xl lg:max-w-5xl">
+      <div class="text-center">
+        <h1
+          class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+        >
+          {title}
+        </h1>
+        <p class="mt-4 text-pretty text-neutral-600 dark:text-neutral-400">
+          {subTitle}
+        </p>
+      </div>
+
+      <div class="mt-12 flex justify-center">
+        <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
+          <ContactIconBlock
+            heading="Venez nous rendre visite, en hiver..."
+            content="En saison hivernale, le cercle hippique est situé à l'adresse suivante :"
+            isAddressVisible={true}
+            addressContent="7 bis rue de la Daguenette, Gouvieux"
+            ><Icon name="winter" />
+          </ContactIconBlock>
+          <ContactIconBlock
+            heading="... et en été"
+            content="En saison estivale, le cercle hippique est situé à l'adresse suivante :"
+            isAddressVisible={true}
+            addressContent="1030 Chemin des Terres Noires, Gouvieux"
+            ><Icon name="sun" />
+          </ContactIconBlock>
+
+          <ContactIconBlock
+            heading="Contactez-nous par e-mail"
+            content="Vous souhaitez nous écrire ? Envoyez-nous un e-mail à"
+            isLinkVisible={true}
+            linkTitle="contact@cerclehippiquedegouvieux.com"
+            ><Icon name="envelopeOpen" />
+          </ContactIconBlock>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
