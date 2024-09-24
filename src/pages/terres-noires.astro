@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets';
+
+import Layout from '@/layouts/Layout.astro';
+
+import img from '@images/terres-noires/1.jpg';
+import img2 from '@images/terres-noires/2.png';
+import img3 from '@images/terres-noires/3.png';
+import img4 from '@images/terres-noires/4.png';
+---
+
+<Layout title="Terres Noires">
+  <section class="mx-auto mt-10 max-w-[85rem] px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-14 2xl:max-w-full">
+    <div class="max-w-screen-md">
+      <h1 class="mb-4 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200">
+        Les Terres Noires
+      </h1>
+      <p class="mb-8 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-xl">
+        Véritable <span class="text-teal-700 dark:text-teal-500">havre de paix</span> en plein cœur de la forêt de Gouvieux.
+        Pension pour chevaux en paddock individuel, en binôme ou en troupeau.
+      </p>
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] items-center gap-16 px-4 py-10 sm:px-6 lg:grid lg:grid-cols-2 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div>
+      <h2 class="mb-4 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200">
+        Des installations adaptées
+      </h2>
+      <p class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-lg">
+        Si vous cherchez un endroit vraiment TOP pour mettre votre cheval au pré, c’est l’endroit idéal. De très belles
+        installations vous permettrons de travailler votre cheval au calme et dans des conditions plus qu’adaptées.
+      </p>
+    </div>
+
+    <div class="mt-8 grid grid-cols-2 gap-4">
+      <Image class="w-full rounded-xl" src={img2} alt="" draggable={'false'} format={'avif'} />
+      <Image class="mt-4 w-full rounded-xl lg:mt-10" src={img} alt="" draggable={'false'} format={'avif'} />
+    </div>
+  </section>
+
+  <section
+    class="mx-auto max-w-[85rem] items-center gap-8 px-4 py-10 sm:px-6 sm:py-16 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 lg:px-8 lg:py-14 xl:gap-16 2xl:max-w-full"
+  >
+    <div class="mt-8 grid grid-cols-2 gap-4">
+      <Image class="w-full rounded-xl" src={img3} alt="" draggable={'false'} format={'avif'} />
+      <Image class="mt-4 w-full rounded-xl lg:mt-10" src={img4} alt="" draggable={'false'} format={'avif'} />
+    </div>
+    <div class="mt-4 md:mt-0">
+      <h2 class="mb-4 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200">
+        Sont à votre disposition :
+      </h2>
+      <h3 class="mb-4 text-balance text-2xl font-extrabold tracking-tight text-neutral-700 dark:text-neutral-400">
+        2 carrières et 1 rond de longe.
+      </h3>
+      <p class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-lg">
+        La pension se trouve en bordure de la forêt de Gouvieux, ce qui vous donne aisément la possibilité de faire des
+        balades. Le Cercle Hippique de Gouvieux se trouve à moins de 2 Km des pensions boxes sur un chemin en ligne
+        droite débutant aux Terres Noires.
+      </p>
+    </div>
+  </section>
+</Layout>
