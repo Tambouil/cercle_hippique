@@ -1,0 +1,144 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Pricing from '@/components/Pricing.astro';
+
+const inscriptions = {
+  title: 'Inscriptions',
+  subTitle: "Tarifs pour l'année 2024-2025",
+  items: [
+    {
+      name: 'Cotisation annuelle +18 ans',
+      description: 'Pour les adultes',
+      price: '180 €',
+      billingFrequency: 'par an',
+      features: ['Accès aux installations', 'Participation aux événements du club', 'Tarif famille : 100 €'],
+    },
+    {
+      name: 'Cotisation annuelle -18 ans',
+      description: 'Pour les jeunes cavaliers',
+      price: '100 €',
+      billingFrequency: 'par an',
+      features: ['Accès aux installations', 'Participation aux événements du club', 'Tarif famille : 50 €'],
+    },
+    {
+      name: 'Licence FFE cavalier',
+      description: 'Obligatoire pour la pratique',
+      price: '36 €',
+      billingFrequency: 'par an',
+      features: ['Assurance pour la pratique', 'Participation aux compétitions', 'Tarif -18 ans : 25 €'],
+    },
+  ],
+};
+
+const pensions = {
+  title: 'Pensions Mensuelles',
+  subTitle: 'Tarifs pour la pension de votre cheval',
+  items: [
+    {
+      name: 'Pension de base',
+      description: 'Box standard',
+      price: '490 €',
+      billingFrequency: 'par mois',
+      features: ['Hébergement en box', 'Nourriture incluse', 'Sorties en paddock'],
+    },
+    {
+      name: 'Pension cheval lâché',
+      description: '4 jours par semaine',
+      price: '540 €',
+      billingFrequency: 'par mois',
+      features: ['Hébergement en box', 'Nourriture incluse', 'Sorties prolongées 4j/semaine'],
+    },
+    {
+      name: 'Pension cheval travaillé',
+      description: '4 jours par semaine',
+      price: '610 €',
+      billingFrequency: 'par mois',
+      features: ['Hébergement en box', 'Nourriture incluse', 'Travail du cheval 4j/semaine'],
+    },
+  ],
+};
+
+const forfaits = {
+  title: 'Forfaits',
+  subTitle: 'Non Récupérable',
+  items: [
+    {
+      name: 'Forfaits hebdomadaires',
+      description: 'Cours par semaine',
+      price: 'À partir de 90 €',
+      billingFrequency: 'par mois',
+      features: ['1 heure : 90 €', '2 heures : 170 €', '3 heures : 240 €', '4 heures : 300 €'],
+    },
+    {
+      name: 'Forfaits spéciaux',
+      description: 'Poney & Chevaux',
+      price: 'À partir de 230 €',
+      billingFrequency: 'pour 3 mois',
+      features: ['Forfait 10h : 230 €', 'Forfait 20h : 420 €', 'Cours particuliers : 45 €'],
+    },
+    {
+      name: 'Forfaits mensuels et annuels',
+      description: 'Options flexibles',
+      price: 'À partir de 165 €',
+      billingFrequency: 'par mois',
+      features: [
+        'Mensuel 2h/semaine : 165 €',
+        'Mensuel 3h/semaine : 230 €',
+        'Mensuel 4h/semaine : 285 €',
+        'Annuel 1h/semaine : 900 €',
+      ],
+    },
+  ],
+};
+
+const activitesSpeciales = {
+  title: 'Activités Spéciales',
+  subTitle: 'Anniversaires, locations et balades',
+  items: [
+    {
+      name: 'Anniversaires',
+      description: 'De 14h à 16H30 (mini 8 / max 12)',
+      price: 'À partir de 30 €',
+      billingFrequency: 'par personne',
+      features: ['Standard : 30 €/pers', '1/2 journée Adhérent : 40 €/pers', '1/2 journée NON Adhérent : 45 €/pers'],
+    },
+    {
+      name: 'Location de Poney',
+      description: 'Sous la responsabilité des parents',
+      price: 'À partir de 15 €',
+      billingFrequency: 'par session',
+      features: ['30 min : 15 €', '1h : 20 €'],
+    },
+    {
+      name: 'Cours Baby Poney et Balades',
+      description: 'Pour les 3-5 ans et balades en groupe',
+      price: 'À partir de 30 €',
+      billingFrequency: 'par session',
+      features: [
+        'Baby Poney (10h sur 3 mois) : 180 €',
+        'Balade 1h (2 pers. min) : 30 €/pers',
+        'Balade 2h (2 pers. min) : 50 €/pers',
+        'Heure supplémentaire : 25 €/pers',
+      ],
+    },
+  ],
+};
+---
+
+<Layout title="Tarifs">
+  <section class="mx-auto mt-10 max-w-[85rem] px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-14 2xl:max-w-full">
+    <div class="max-w-screen-md">
+      <h1 class="mb-4 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200">
+        Tarifs du cercle hippique
+      </h1>
+      <p class="mb-8 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-xl">
+        Toute heure non décommandée 24h avant est due & aucune prestation n'est ni remboursée ni cessible.
+      </p>
+    </div>
+  </section>
+
+  <Pricing {...inscriptions} />
+  <Pricing {...pensions} />
+  <Pricing {...forfaits} />
+  <Pricing {...activitesSpeciales} />
+</Layout>
