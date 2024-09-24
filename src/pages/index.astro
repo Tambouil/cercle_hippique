@@ -3,11 +3,12 @@ import ClubInfo from '@/components/ClubInfo.astro';
 import Layout from '../layouts/Layout.astro';
 import HeroSection from '@/components/HeroSection.astro';
 import clubImg from '@images/club.webp';
+import Activities from '@/components/Activities.astro';
 ---
 
 <Layout title="Accueil">
   <HeroSection
-    title=`Cercle hippique de <span class="text-teal-800 dark:text-yellow-400">Gouvieux</span>`
+    title=`Cercle hippique de <span class="text-teal-800 dark:text-teal-500">Gouvieux</span>`
     subTitle="Centre équestre familial orienté vers le loisir, offrant cours pour tous les niveaux et pensions"
     primaryBtn="Décourvir le club"
     primaryBtnURL={`/club`}
@@ -34,5 +35,11 @@ import clubImg from '@images/club.webp';
       },
     ]}
     clubImg={clubImg}
+  />
+
+  <Activities
+    title="Les discipline du Cercle Hippique"
+    subTitle="Les disciplines du Cercle Hippique sont les plus adaptées aux besoins de votre projet."
+    activities={['CSO', 'Dressage', 'Attelage', 'Voltige', 'Rando/Ballade']}
   />
 </Layout>

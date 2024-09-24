@@ -1,7 +1,7 @@
 ---
 import ThemeIcon from '@components/ThemeIcon.astro';
 import NavLink from '@components/NavLink.astro';
-import Logo from '@images/logo.png';
+import Logo from '@components/Logo.astro';
 import { Image } from 'astro:assets';
 
 const homeUrl = Astro.url.pathname;
@@ -24,13 +24,7 @@ const navLinks = [
     aria-label="Global"
   >
     <div class="flex items-center justify-between">
-      <a
-        class="flex-none rounded-lg text-xl font-bold outline-none ring-zinc-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
-        href={homeUrl}
-        aria-label="Brand"
-      >
-        <Image id="brand-logo" src={Logo} alt="Logo" class="h-auto w-14" />
-      </a>
+      <Logo class="h-auto w-24" />
       <div class="ml-auto mr-5 md:hidden">
         <button
           type="button"
@@ -177,16 +171,6 @@ const navLinks = [
       });
     });
   });
-</script>
-<script is:inline>
-  if (
-    localStorage.getItem('hs_theme') === 'dark' ||
-    (!('hs_theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-  ) {
-    document.getElementById('brand-logo').src = 'src/images/logo-dark.png';
-  } else {
-    document.getElementById('brand-logo').src = 'src/images/logo.png';
-  }
 </script>
 <script>
   import '@preline/collapse/index.js';

@@ -1,7 +1,6 @@
 ---
 import { getImage } from 'astro:assets';
 import { OG, SEO, SITE } from '@utils/variables';
-import faviconSrc from '@images/logo.png';
 
 const defaultProps = {
   meta: SITE.description,
@@ -12,7 +11,6 @@ const { meta = defaultProps.meta, structuredData = defaultProps.structuredData }
 const URL = `${Astro.site}`;
 const author = SITE.author;
 const canonical = Astro.url.href;
-const basePath = Astro.url.pathname;
 const ogTitle = OG.title;
 const ogDescription = OG.description;
 const socialImageRes = await getImage({
@@ -21,20 +19,6 @@ const socialImageRes = await getImage({
   height: 600,
 });
 const socialImage = Astro.url.origin + socialImageRes.src;
-
-const favicon = await getImage({
-  src: faviconSrc,
-  width: 32,
-  height: 32,
-  format: 'png',
-});
-
-const appleTouchIcon = await getImage({
-  src: faviconSrc,
-  width: 180,
-  height: 180,
-  format: 'png',
-});
 ---
 
 {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
@@ -71,9 +55,6 @@ const appleTouchIcon = await getImage({
 
 <!-- Links for favicons -->
 <link href="/favicon.ico" rel="icon" sizes="any" type="image/x-icon" />
-<link href={favicon.src} rel="icon" sizes="32x32" type="image/png" />
 <meta name="mobile-web-app-capable" content="yes" />
-<link href={appleTouchIcon.src} rel="apple-touch-icon" />
-<link href={appleTouchIcon.src} rel="shortcut icon" />
 <!-- Set theme color -->
 <meta name="theme-color" content="#115e59" />
