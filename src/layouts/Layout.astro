@@ -1,7 +1,7 @@
 ---
-import Footer from '@/components/Footer.astro';
-import Meta from '@components/Meta.astro';
-import Navbar from '@components/Navbar.astro';
+import Footer from '@/components/layout/Footer.astro';
+import Meta from '@/components/layout/Meta.astro';
+import Navbar from '@/components/layout/Navbar.astro';
 import { SITE } from '@utils/variables';
 
 const { title = SITE.title, meta, structuredData, lang = 'fr' } = Astro.props;

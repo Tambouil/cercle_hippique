@@ -1,5 +1,5 @@
 ---
-import Card from '@/components/Card.astro';
+import TeamCard from '@/components/TeamCard.astro';
 import Layout from '@/layouts/Layout.astro';
 
 import teamImage1 from '@images/team/1.jpg';
@@ -82,6 +82,6 @@ const team = [
     </p>
   </div>
   <section class="grid md:grid-cols-3 gap-10 mx-auto py-10 lg:py-14">
-    {team.map((member) => <Card {...member} />)}
+    {team.map((member) => <TeamCard {...member} />)}
   </section>
 </Layout>

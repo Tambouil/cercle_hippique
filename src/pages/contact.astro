@@ -1,7 +1,7 @@
 ---
 import Icon from '@components/ui/icons/Icon.astro';
 import Layout from '@/layouts/Layout.astro';
-import ContactIconBlock from '@/components/ContactIconBlock.astro';
+import ContactItem from '@/components/ContactItem.astro';
 
 const title: string = 'Contactez-nous';
 const subTitle: string =
@@ -35,28 +35,28 @@ const subTitle: string =
 
       <div class="mt-12 flex justify-center">
         <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
-          <ContactIconBlock
+          <ContactItem
             heading="Venez nous rendre visite, en hiver..."
             content="En saison hivernale, le cercle hippique est situé à l'adresse suivante :"
             isAddressVisible={true}
             addressContent="7 bis rue de la Daguenette, Gouvieux"
             ><Icon name="winter" />
-          </ContactIconBlock>
-          <ContactIconBlock
+          </ContactItem>
+          <ContactItem
             heading="... et en été"
             content="En saison estivale, le cercle hippique est situé à l'adresse suivante :"
             isAddressVisible={true}
             addressContent="1030 Chemin des Terres Noires, Gouvieux"
             ><Icon name="sun" />
-          </ContactIconBlock>
+          </ContactItem>
 
-          <ContactIconBlock
+          <ContactItem
             heading="Contactez-nous par e-mail"
             content="Vous souhaitez nous écrire ? Envoyez-nous un e-mail à"
             isLinkVisible={true}
             linkTitle="contact@cerclehippiquedegouvieux.com"
             ><Icon name="envelopeOpen" />
-          </ContactIconBlock>
+          </ContactItem>
         </div>
       </div>
     </div>
