@@ -61,7 +61,17 @@ const team = [
 ];
 ---
 
-<Layout title="Equipe">
+<Layout
+  title="Equipe"
+  structuredData={{
+    '@context': 'https://schema.org/',
+    '@type': 'Organization',
+    name: 'Cercle Hippique de Gouvieux',
+    description: 'Le Cercle Hippique de Gouvieux est ouvert et dirigé par Stéphanie Dorothée depuis le 1er avril 1997.',
+    url: 'https://cerclehippiquedegouvieux.com',
+    sameAs: ['https://www.facebook.com/cerclehippiquedegouvieux'],
+  }}
+>
   <div class="flex flex-col gap-3 mx-auto mt-16">
     <h1 class="font-bold text-3xl text-neutral-800 dark:text-neutral-200">
       Découvrez l'équipe du <span class="text-teal-800 dark:text-teal-500">Cercle Hippique de Gouvieux</span>

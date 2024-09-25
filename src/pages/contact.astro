@@ -8,7 +8,18 @@ const subTitle: string =
   'Vous avez des questions à propos du cercle hippique de Gouvieux ? Contactez-nous et nous vous répondrons au plus vite.';
 ---
 
-<Layout title="Contact">
+<Layout
+  title="Contact"
+  structuredData={{
+    '@context': 'https://schema.org/',
+    '@type': 'Organization',
+    name: 'Cercle Hippique de Gouvieux',
+    description: 'Le Cercle Hippique de Gouvieux est ouvert et dirigé par Stéphanie Dorothée depuis le 1er avril 1997.',
+    url: 'https://cerclehippiquedegouvieux.com',
+    logo: 'https://cerclehippiquedegouvieux.com/logo.png',
+    sameAs: ['https://www.facebook.com/cerclehippiquedegouvieux'],
+  }}
+>
   <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
     <div class="mx-auto max-w-2xl lg:max-w-5xl">
       <div class="text-center">
