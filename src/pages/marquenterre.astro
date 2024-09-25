@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import PrimaryCTA from '@/components/ui/buttons/PrimaryCTA.astro';
-import { Image } from 'astro:assets';
+import Heading from '@/components/sections/Heading.astro';
+import ImageText from '@/components/sections/ImageText.astro';
 
 import img from '@images/marquenterre/1.jpg';
 import img2 from '@images/marquenterre/2.jpg';
@@ -22,72 +22,34 @@ import img6 from '@images/marquenterre/6.jpg';
     sameAs: ['https://www.facebook.com/cerclehippiquedegouvieux'],
   }}
 >
-  <section class="mx-auto mt-10 max-w-[85rem] px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-14 2xl:max-w-full">
-    <div class="max-w-screen-md">
-      <h1 class="mb-4 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200">
-        Le Marquenterre
-      </h1>
-      <p class="mb-8 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-xl">
-        Véritable <span class="text-teal-800 dark:text-teal-500">semaine de rêve</span> au bord de la mer, le Marquenterre
-        restera un <span class="text-teal-800 dark:text-teal-500">souvenir inoubliable</span>.
-      </p>
-    </div>
-  </section>
+  <Heading
+    title="Le Marquenterre"
+    description="Véritable <span class='text-teal-800 dark:text-teal-500'>semaine de rêve</span> au bord de la mer, le Marquenterre restera un <span class='text-teal-800 dark:text-teal-500'>souvenir inoubliable</span>"
+  />
 
-  <section
-    class="mx-auto max-w-[85rem] items-center gap-16 px-4 py-10 sm:px-6 lg:grid lg:grid-cols-2 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
-    <div>
-      <h2 class="mb-4 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200">
-        Au programme
-      </h2>
-      <p class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-lg">
-        Balades à poney ou à cheval sur la plage tous les jours, jeux et activités créatives, balades à vélo, soirées
-        crêpes, boom et pleins d’autres surprises!
-      </p>
-    </div>
+  <ImageText
+    title="Au programme"
+    description="Balades à poney ou à cheval sur la plage tous les jours, jeux et activités créatives, balades à vélo, soirées crêpes, boom et pleins d'autres surprises!"
+    image1={img2}
+    image2={img}
+  />
 
-    <div class="mt-8 grid grid-cols-2 gap-4">
-      <Image class="w-full rounded-xl" src={img2} alt="" draggable={'false'} format={'avif'} />
-      <Image class="mt-4 w-full rounded-xl lg:mt-10" src={img} alt="" draggable={'false'} format={'avif'} />
-    </div>
-  </section>
+  <ImageText
+    reversed={true}
+    title="L’édition 2025"
+    description="Elle se tiendra du samedi 19 juillet au samedi 26 juillet et du samedi 26 juillet au samedi 02 août. Vous pouvez participer à une semaine comme aux deux !"
+    image1={img3}
+    image2={img4}
+  />
 
-  <section
-    class="mx-auto max-w-[85rem] items-center gap-8 px-4 py-10 sm:px-6 sm:py-16 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 lg:px-8 lg:py-14 xl:gap-16 2xl:max-w-full"
-  >
-    <div class="mt-8 grid grid-cols-2 gap-4">
-      <Image class="w-full rounded-xl" src={img3} alt="" draggable={'false'} format={'avif'} />
-      <Image class="mt-4 w-full rounded-xl lg:mt-10" src={img4} alt="" draggable={'false'} format={'avif'} />
-    </div>
-    <div class="mt-4 md:mt-0">
-      <h2 class="mb-4 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200">
-        L’édition 2025
-      </h2>
-      <p class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-lg">
-        Elle se tiendra du samedi 19 juillet au samedi 26 juillet et du samedi 26 juillet au samedi 02 août. Vous pouvez
-        participer à une semaine comme aux deux !
-      </p>
-    </div>
-  </section>
-
-  <section
-    class="mx-auto max-w-[85rem] items-center gap-16 px-4 py-10 sm:px-6 lg:grid lg:grid-cols-2 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
-    <div>
-      <h2 class="mb-4 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200">
-        Des questions ?
-      </h2>
-      <p class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-lg">
-        N'hésitez pas à nous contacter pour toute question ou demande de renseignements.
-      </p>
-      <div class="mt-8">
-        <PrimaryCTA title="Contactez-nous" url="mailto:marquenterre@cerclehippiquedegouvieux.com" />
-      </div>
-    </div>
-    <div class="mt-8 grid grid-cols-2 gap-4">
-      <Image class="w-full rounded-xl" src={img5} alt="" draggable={'false'} format={'avif'} />
-      <Image class="mt-4 w-full rounded-xl lg:mt-10" src={img6} alt="" draggable={'false'} format={'avif'} />
-    </div>
-  </section>
+  <ImageText
+    title="Des questions ?"
+    description="N'hésitez pas à nous contacter pour toute question ou demande de renseignements."
+    image1={img5}
+    image2={img6}
+    cta={{
+      title: 'Contactez-nous',
+      url: 'mailto:marquenterre@cerclehippiquedegouvieux.com',
+    }}
+  />
 </Layout>

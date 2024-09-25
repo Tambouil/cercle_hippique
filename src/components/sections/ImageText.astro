@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+import PrimaryCTA from '../ui/buttons/PrimaryCTA.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  image1: ImageMetadata;
+  image2: ImageMetadata;
+  reversed?: boolean;
+  cta?: {
+    title: string;
+    url: string;
+  };
+}
+
+const { title, description, image1, image2, reversed = false, cta = false } = Astro.props;
+---
+
+<section
+  class="mx-auto max-w-[85rem] items-center gap-16 px-4 py-10 sm:px-6 lg:grid lg:grid-cols-2 lg:px-8 lg:py-14 2xl:max-w-full"
+>
+  <div class={reversed ? 'order-2' : ''}>
+    <h2 class="mb-4 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200">
+      {title}
+    </h2>
+    <p class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-lg">
+      {description}
+    </p>
+    {
+      cta ? (
+        <div class="mt-8">
+          <PrimaryCTA title="Contactez-nous" url="mailto:marquenterre@cerclehippiquedegouvieux.com" />
+        </div>
+      ) : null
+    }
+  </div>
+
+  <div class={`mt-8 grid grid-cols-2 gap-4 ${reversed ? 'order-1' : ''}`}>
+    <Image class="w-full rounded-xl" src={image1} alt="photo de l'installation" draggable={'false'} format={'avif'} />
+    <Image
+      class="mt-4 w-full rounded-xl lg:mt-10"
+      src={image2}
+      alt="photo de l'installation"
+      draggable={'false'}
+      format={'avif'}
+    />
+  </div>
+</section>
