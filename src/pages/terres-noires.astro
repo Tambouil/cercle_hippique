@@ -20,27 +20,28 @@ import img4 from '@images/terres-noires/4.png';
     sameAs: ['https://www.facebook.com/cerclehippiquedegouvieux'],
   }}
 >
-  <Heading
-    title="Les Terres Noires"
-    description="Véritable <span class='text-teal-800 dark:text-teal-500'>havre de paix</span> en plein cœur de la forêt de Gouvieux. Pension pour chevaux en paddock individuel, en binôme ou en troupeau."
-  />
+  <div class="h-svh">
+    <Heading
+      title="Les Terres Noires"
+      description="Véritable <span class='text-teal-800 dark:text-teal-500'>havre de paix</span> en plein cœur de la forêt de Gouvieux. Pension pour chevaux en paddock individuel, en binôme ou en troupeau."
+    />
+    <ImageText
+      title="Des installations adaptées"
+      description="Si vous cherchez un endroit vraiment TOP pour mettre votre cheval au pré, c'est l'endroit idéal. De très belles installations vous permettrons de travailler votre cheval au calme et dans des conditions plus qu'adaptées."
+      image1={img}
+      image2={img2}
+    />
 
-  <ImageText
-    title="Des installations adaptées"
-    description="Si vous cherchez un endroit vraiment TOP pour mettre votre cheval au pré, c'est l'endroit idéal. De très belles installations vous permettrons de travailler votre cheval au calme et dans des conditions plus qu'adaptées."
-    image1={img}
-    image2={img2}
-  />
-
-  <ImageText
-    title="2 carrières et 1 rond de longe sont à votre disposition"
-    description="La pension se trouve en bordure de la forêt de Gouvieux, ce qui vous donne aisément la possibilité de faire des balades. Le Cercle Hippique de Gouvieux se trouve à moins de 2 Km des pensions boxes sur un chemin en ligne droite débutant aux Terres Noires."
-    image1={img3}
-    image2={img4}
-    reversed={true}
-  >
-    <h3 class="mb-4 text-balance text-2xl font-extrabold tracking-tight text-neutral-700 dark:text-neutral-400">
-      2 carrières et 1 rond de longe.
-    </h3>
-  </ImageText>
+    <ImageText
+      title="2 carrières et 1 rond de longe sont à votre disposition"
+      description="La pension se trouve en bordure de la forêt de Gouvieux, ce qui vous donne aisément la possibilité de faire des balades. Le Cercle Hippique de Gouvieux se trouve à moins de 2 Km des pensions boxes sur un chemin en ligne droite débutant aux Terres Noires."
+      image1={img3}
+      image2={img4}
+      reversed={true}
+    >
+      <h3 class="mb-4 text-balance text-2xl font-extrabold tracking-tight text-neutral-700 dark:text-neutral-400">
+        2 carrières et 1 rond de longe.
+      </h3>
+    </ImageText>
+  </div>
 </Layout>
